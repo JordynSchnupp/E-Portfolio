@@ -4,6 +4,7 @@ title: "Resume"
 ---
 
 Hi there!! Resume goes here
+<!-- [Resume as PDF]() -->
 
 ## Goals
 
