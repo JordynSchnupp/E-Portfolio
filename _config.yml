@@ -18,7 +18,6 @@ email: jor.schnupp@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   This is describing my site I have this as a placeholder 
   until i can come up with a better description
-# twitter_username: username
 github_username: Jordyn Schnupp
 minimal_mistakes_skin: default
 search: true
@@ -64,27 +63,21 @@ author:
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://jordynschnupp.github.io/E-Portfolio/"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
+      url: "https://github.com/JordynSchnupp"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/"
 
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://www.instagram.com/j.schnupp/"
 
 defaults:
   # _posts
