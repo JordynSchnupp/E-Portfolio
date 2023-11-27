@@ -56,7 +56,7 @@ plugins:
 
 author:
   name   : "Jordyn Schnupp"
-  avatar : "/assets/images/pfp.jpg"
+  avatar : "/assets/pfp.jpg"
   bio    : "she/her 
   Computer Science undergrad focusing on cybersecurity"
   links:
