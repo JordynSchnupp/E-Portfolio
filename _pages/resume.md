@@ -4,7 +4,7 @@ title: "Resume"
 ---
 
 
-[Resume as a LaTeX PDF](/assets/Resume 2023.pdf)
+[Resume as a LaTeX PDF](../assets/Resume.pdf)
 
 ## Goals
 Passionate and hardworking aspiring cybersecurity specialist looking for opportunities to grow in the cybersecurity field and work within a team whilst expanding my knowledge of the industry and obtaining new experiences. 
