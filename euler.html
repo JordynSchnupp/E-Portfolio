@@ -7546,19 +7546,32 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Project Euler Problem #48 - Self Powers</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Project Euler Problem #48 - Self Powers</span>
 
 <span class="k">def</span> <span class="nf">modpow</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
-  <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
-  <span class="k">while</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">a</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">:</span>
-      <span class="n">n</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span> <span class="o">%</span> <span class="n">m</span>
-    <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">z</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span> <span class="o">%</span> <span class="n">m</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span>
-  <span class="k">return</span> <span class="n">n</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">modpow</span> <span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">a</span><span class="p">,</span> <span class="n">m</span><span class="p">))</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">a</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span> <span class="o">%</span> <span class="n">m</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">z</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span> <span class="o">%</span> <span class="n">m</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">n</span>
 
-<span class="c1">#=&gt; Solves to: 9110846700</span>
+<span class="k">def</span> <span class="nf">self_powers</span><span class="p">(</span><span class="n">limit</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">modulo</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="mi">10</span> 
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">limit</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">result</span> <span class="o">+</span> <span class="n">modpow</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">modulo</span><span class="p">))</span> <span class="o">%</span> <span class="n">modulo</span>
+
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">limit</span> <span class="o">=</span> <span class="mi">1000</span>  
+    <span class="n">result</span> <span class="o">=</span> <span class="n">self_powers</span><span class="p">(</span><span class="n">limit</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The last 10 digits of the series sum are: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+    <span class="c1"># Prints "The last 10 digits of the series sum are: 9110846700"</span>
 </pre></div>
 </div>
 </div>
@@ -7570,17 +7583,9 @@ a.anchor-link {
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">/workspaces/E-Portfolio/euler.ipynb Cell 4</span> line <span class="ansi-cyan-fg">1
-</span><span class="ansi-green-intense-fg ansi-bold">      &lt;a href='vscode-notebook-cell://codespaces%2Bglowing-winner-979wxwj5rrxvcpq7v/workspaces/E-Portfolio/euler.ipynb#W4sdnNjb2RlLXJlbW90ZQ%3D%3D?line=8'&gt;9&lt;/a&gt;</span>     a = a &gt;&gt; 1
-<span class="ansi-green-intense-fg ansi-bold">     &lt;a href='vscode-notebook-cell://codespaces%2Bglowing-winner-979wxwj5rrxvcpq7v/workspaces/E-Portfolio/euler.ipynb#W4sdnNjb2RlLXJlbW90ZQ%3D%3D?line=9'&gt;10&lt;/a&gt;</span>   return n
-<span class="ansi-green-fg">---&gt; &lt;a href='vscode-notebook-cell://codespaces%2Bglowing-winner-979wxwj5rrxvcpq7v/workspaces/E-Portfolio/euler.ipynb#W4sdnNjb2RlLXJlbW90ZQ%3D%3D?line=10'&gt;11&lt;/a&gt;</span> print(modpow (z,a, m))
-<span class="ansi-green-intense-fg ansi-bold">     &lt;a href='vscode-notebook-cell://codespaces%2Bglowing-winner-979wxwj5rrxvcpq7v/workspaces/E-Portfolio/euler.ipynb#W4sdnNjb2RlLXJlbW90ZQ%3D%3D?line=12'&gt;13&lt;/a&gt;</span> #=&gt; Solves to: 9110846700
-
-<span class="ansi-red-fg">NameError</span>: name 'z' is not defined</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>The last 10 digits of the series sum are: 9110846700
+</pre>
 </div>
 </div>
 </div>
